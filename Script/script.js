@@ -23,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Text typing effects 
     const texts = [
         "Full-Stack Developer",
-        "UI/UX Designer",
+        "Backend Developer",
+        "IoT & Embedded Systems Enthusiast",
+        "Computer Science Student",
     ]
     let textIndex = 0;
     let charIndex = 0;

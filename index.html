@@ -7,14 +7,14 @@
         <!-- Linking to font-awesome for icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
         <!-- Linking to the css file for styling -->
-        <link rel="stylesheet" href="../Style/style.css"/>
+        <link rel="stylesheet" href="/Style/style.css"/>
     </head>
 
     <body>
 
         <!-- Header Section with logo and side menu -->
         <header>
-            <a href="/docs/index.html" class="logo" aria-label="Open Menu">
+            <a href="/index.html" class="logo" aria-label="Open Menu">
                 <!-- Logo and Name -->
                 <i class="fa-solid fa-terminal logo-icon"></i>
                 <span class="logo-text">Igor Thairony</span>
@@ -30,7 +30,7 @@
                 </div>
                 <!-- Menu toggle bar options -->
                 <ul>
-                    <li><a href="/docs/index.html">Home</a></li>
+                    <li><a href="/index.html">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#projects">Projects</a></li>
@@ -45,13 +45,15 @@
             <div class="content">
                 <h1>Igor Thairony</h1>
                 <h2>Junior <span class="typing-text">Full-Stack Developer</span></h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ea assumenda itaque. Esse laboriosam sequi voluptatibus quis, nulla quibusdam, quasi voluptatem iure nostrum reprehenderit</p>
+                <p>Computer Science student at Griffith College with hands-on experience building full-stack applications using the MERN stack. 
+                Passionate about developing scalable, user-focused solutions through REST APIs, authentication systems, and responsive interfaces.
+                </p>
                 
                 <!-- Buttons to display portflio / contact me / Download CV -->
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-file-code"></i>View Projects</a>
                     <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-paper-plane"></i>Contact me</a>
-                    <a href="CV.pdf" class="btn btn-secondary" target="_blank"><i class="fa-solid fa-file"></i>Download CV</a>
+                     <a href="/Source/CV_Igor_Thairony_2026.pdf" class="btn btn-secondary" download="Igor_Thairony_CV.pdf"><i class="fa-solid fa-file"></i>Download CV</a>
                 </div>
 
             </div>
@@ -97,25 +99,52 @@
 
                 <div class="right-panel">
 
+
                     <div class="skill">
                         <span>Java</span>
                         <div class="bar"><div class="fill java"></div></div>
                     </div>
-
+ 
                     <div class="skill">
-                        <span>JavaScript</span>
-                        <div class="bar"><div class="fill js"></div></div>
+                        <span>Python</span>
+                        <div class="bar"><div class="fill python"></div></div>
                     </div>
-
+ 
+                    <div class="skill">
+                        <span>C++</span>
+                        <div class="bar"><div class="fill cpp"></div></div>
+                    </div>
+ 
                     <div class="skill">
                         <span>React</span>
                         <div class="bar"><div class="fill react"></div></div>
                     </div>
-
+ 
+                    <div class="skill">
+                        <span>MongoDB</span>
+                        <div class="bar"><div class="fill mongodb"></div></div>
+                    </div>
+ 
                     <div class="skill">
                         <span>MySQL</span>
-                    <div class="bar"><div class="fill sql"></div></div>
+                        <div class="bar"><div class="fill sql"></div></div>
                     </div>
+ 
+                    <div class="skill">
+                        <span>Git/GitHub</span>
+                        <div class="bar"><div class="fill git"></div></div>
+                    </div>
+ 
+                    <div class="skill">
+                        <span>AWS</span>
+                        <div class="bar"><div class="fill aws"></div></div>
+                    </div>
+ 
+                    <div class="skill">
+                        <span>Linux</span>
+                        <div class="bar"><div class="fill linux"></div></div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -159,14 +188,15 @@
                 </div>
 
                 <div class="education-content">
-                    <h2>Public Management Degree</h2>
-                    <h3>Bachelor's Degree</h3>
-                    <p class="education-date">Completed</p>
-
+                    <h2>Unyleya</h2>
+                    <h3>Diploma in Public Management</h3>
+                    <p class="education-date">Completed 2024 — Brasília, Brazil</p>
+ 
                     <p>
                         Studied administration, management, planning,
                         public policy and organizational processes.
                     </p>
+
 
                 </div>
             </div>
@@ -181,7 +211,6 @@
             <div class="projects-grid">
 
                 <!-- Project One -->
-                <!-- Project One -->
                 <a class="project-card" data-repo="Ithairony/kitchenGuardian" href="https://github.com/Ithairony/kitchenGuardian" target="_blank">
                     <div class="project-image">
                         <img src="/Source/kitchenGuardianLogo.png" alt="Project preview">
@@ -195,6 +224,25 @@
                         </div>
                     </div>
                 </a>
+
+                <!-- Project Two -->
+                <a class="project-card" data-repo="Ithairony/RealEstateManagementPlatform" href="https://github.com/Ithairony" target="_blank">
+                    <div class="project-image">
+                        <img src="/Source/loadingIcon.jpg" alt="Real Estate Management Platform preview">
+                    </div>
+                    <div class="project-content">
+                        <h2>Real Estate Management Platform</h2>
+                        <p> Full-stack real estate management application built with React, Node.js, and MySQL, featuring
+                            JWT authentication, property CRUD operations, advanced search filters, and optimized
+                            database queries with connection pooling for faster response times.</p>
+                        <div class="project-tags">
+                            <span class="repo-language">Loading...</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
 
 
             </div>

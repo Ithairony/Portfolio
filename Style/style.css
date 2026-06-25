@@ -34,7 +34,7 @@ header {
     gap: 10px;
     font-size: 1.5rem;
     font-weight: 700;
-    color: beige;
+    color: #2afc85;
     text-decoration: none;
 }
 
@@ -44,7 +44,7 @@ header {
 }
 
 .logo-text {
-    background: linear-gradient(90deg, white, aquamarine);
+    background: linear-gradient(90deg, white, #2afc85);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -65,7 +65,7 @@ nav a {
 }
 
 nav a:hover {
-    color: aquamarine
+    color: #2afc85;
 }
 
 nav a::after {
@@ -75,7 +75,7 @@ nav a::after {
     left: 0;
     width: 0;
     height: 2px;
-    background: aquamarine;
+    background: #2afc85;
     transition: width 0.3s ease;
 }
 
@@ -751,9 +751,14 @@ p {
 
 /* different skill levels */
 .java { width: 85%; }
-.js { width: 80%; }
+.python { width: 75%; }
+.cpp { width: 65%; }
+.mongodb { width: 70%; }
 .react { width: 70%; }
 .sql { width: 75%; }
+.git { width: 85%; }
+.aws { width: 40%; }
+.linux { width: 80%; }
 
 
 /* ANIMATIONS */
@@ -787,16 +792,26 @@ p {
         }
     }
 
-    @keyframes fadeInUp {
+    @keyframes slideInLeft {
         from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateX(-40px);
         }
         to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0);
         }
     }
+ 
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
 
     @keyframes blink {
         0%, 100% {
@@ -849,7 +864,22 @@ p {
 }
 
 @media (max-width: 768px) {
-   
+
+    .about-card,
+    .info-card {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .left-panel {
+        padding: 30px 0;
+        min-height: 80px;
+    }
+
+    .right-panel {
+        padding: 30px 25px;
+    }
+    
     .hero {
         gap: 40px;
     }
@@ -949,6 +979,11 @@ p {
     .social-icons {
         justify-content: center;
     }
+
+    .btn-secondary {
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 480px) {
