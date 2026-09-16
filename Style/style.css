@@ -9,6 +9,20 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --accent: #33e08a;
+    --accent-soft: rgba(51, 224, 138, 0.12);
+    --accent-soft-2: rgba(51, 224, 138, 0.22);
+    --panel: #151925;
+    --panel-2: #181c29;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-strong: rgba(255, 255, 255, 0.14);
+    --text-hi: #eef1f6;
+    --text-body: #a9b2c3;
+    --text-dim: #6b7385;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
 body {
     background: linear-gradient(135deg , #0c0f17 0%, #151925 100%);
     color: white;
@@ -676,91 +690,180 @@ p {
 }
 
 
-/* Styling the about page */
+/* ============================================================
+   About + Skills section (terminal-window style)
+============================================================ */
 
-.about-card {
-    display:flex;
-    flex-direction: row;
+.about-section {
     width: 80%;
     max-width: 1000px;
     margin: 120px auto;
-    border-radius: 40px;
-    overflow: hidden;
-    border: 2px solid #2afc85;
-    box-shadow: 0 0 25px rgba(42, 252, 133, 0.2);
 }
 
-.info-card {
-    display:flex;
-    width: 80%;
-    max-width: 1000px;
-    margin: 120px auto;
-    border-radius: 40px;
+.terminal-window {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
     overflow: hidden;
-    border: 2px solid #2afc85;
-    box-shadow: 0 0 25px rgba(42, 252, 133, 0.2);
+    box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.6);
 }
 
-/* LEFT SIDE */
-.left-panel {
-    flex: 1;
-    background: linear-gradient(90deg, green 0%, aquamarine 100%);
-    color: #0c0f17;
+.titlebar {
     display: flex;
     align-items: center;
-    justify-content: center;
-    animation: slideInLeft 1s ease;
-}
-
-
-/* RIGHT SIDE */
-.right-panel {
-    text-align: justify;
-    flex: 3;
-    background:#151925;
-    color:linear-gradient(90deg, green 0%, aquamarine 100%);;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
     gap: 10px;
-    animation: fadeIn 1.2s ease;
+    padding: 14px 18px;
+    background: var(--panel-2);
+    border-bottom: 1px solid var(--line);
 }
 
-.skill {
-    margin-bottom: 15px;
+.dots { display: flex; gap: 7px; }
+.dots span { width: 10px; height: 10px; border-radius: 50%; background: #3a4152; }
+
+.filename {
+    margin-left: 6px;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+}
+.filename .path { color: var(--accent); }
+
+.body-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
 }
 
-.skill span {
-    display: block;
-    margin-bottom: 5px;
+/* ---- About panel ---- */
+.about-panel {
+    padding: 38px 40px;
+    border-right: 1px solid var(--line);
 }
 
-.bar {
-    width: 100%;
-    height: 10px;
-    background: #111;
-    border-radius: 10px;
+.about-panel .tag {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+.about-panel .tag::before { content: '▸'; color: var(--accent); }
+
+.about-panel h1 {
+    font-size: 1.7rem;
+    color: var(--text-hi);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 18px;
+    max-width: 22ch;
+}
+
+.about-panel p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: var(--text-body);
+    margin-bottom: 14px;
+}
+.about-panel p:last-of-type { margin-bottom: 0; }
+
+.quick-facts {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.fact {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 6px 14px;
+}
+.fact b { color: var(--text-hi); font-weight: 500; }
+
+/* ---- Skills panel ---- */
+.skills-panel {
+    padding: 38px 36px;
+    background: var(--panel-2);
+}
+
+.skills-panel h2 {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: normal;
+}
+.skills-panel h2 span:last-child { color: var(--accent); }
+
+.skill-group { margin-bottom: 22px; }
+.skill-group:last-child { margin-bottom: 0; }
+
+.group-label {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+}
+
+.skill-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 7px 0;
+}
+
+.skill-name {
+    width: 88px;
+    flex-shrink: 0;
+    font-size: 0.88rem;
+    color: var(--text-hi);
+}
+
+.track {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 99px;
     overflow: hidden;
-    border: 1px solid #0c0f17;
 }
 
 .fill {
     height: 100%;
-    width: 0;
-    background: linear-gradient(90deg, green 0%, aquamarine 100%);;
-    animation: loadBar 2s ease forwards;
+    width: 0; /* animated to target width below */
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--accent), #7cf5b8);
+    animation: loadBar 1.4s ease forwards;
+    animation-delay: 0.3s;
 }
 
-/* different skill levels */
-.java { width: 85%; }
-.python { width: 75%; }
-.cpp { width: 65%; }
-.mongodb { width: 70%; }
-.react { width: 70%; }
-.sql { width: 75%; }
-.git { width: 85%; }
-.aws { width: 40%; }
-.linux { width: 80%; }
+.pct {
+    width: 38px;
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    flex-shrink: 0;
+}
+
+/* Target widths -- one rule per skill */
+.java-fill    { --target: 85%; }
+.python-fill  { --target: 75%; }
+.cpp-fill     { --target: 65%; }
+.react-fill   { --target: 70%; }
+.mongodb-fill { --target: 70%; }
+.sql-fill     { --target: 75%; }
+.git-fill     { --target: 85%; }
+.linux-fill   { --target: 80%; }
+.aws-fill     { --target: 40%; }
+
+.fill { width: var(--target, 0); }
 
 
 /* ANIMATIONS */
@@ -794,17 +897,6 @@ p {
         }
     }
 
-    @keyframes slideInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
- 
     @keyframes fadeIn {
         from {
             opacity: 0;
@@ -824,10 +916,13 @@ p {
         }
         
     }
-    
+
+    /* Terminal skill-bar fill animation -- animates to each skill's
+       own --target width (set per class above), fixing the old bug
+       where "to {}" was empty and never animated anywhere. */
     @keyframes loadBar {
-    from { width: 0; }
-    to { }
+        from { width: 0; }
+        to   { width: var(--target); }
     }
 
     /* FOOTER FLOATING EFFECT */
@@ -867,19 +962,13 @@ p {
 
 @media (max-width: 768px) {
 
-    .about-card,
-    .info-card {
-        flex-direction: column;
-        width: 90%;
+    .body-grid {
+        grid-template-columns: 1fr;
     }
 
-    .left-panel {
-        padding: 30px 0;
-        min-height: 80px;
-    }
-
-    .right-panel {
-        padding: 30px 25px;
+    .about-panel {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
     }
     
     .hero {
