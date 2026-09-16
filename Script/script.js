@@ -55,18 +55,32 @@ document.addEventListener("DOMContentLoaded", function () {
         const langEl = card.querySelector('.repo-language');
         if (!langEl) return;
 
-    fetch(`https://api.github.com/repos/${repo}`)
-        .then(res => {
-            if (!res.ok) throw new Error('GitHub API error: ' + res.status);
-            return res.json();
-        })
-        .then(data => {
-            langEl.textContent = data.language || 'N/A';
-        })
-        .catch(err => {
-            console.error('Failed to load repo info for', repo, err);
-            langEl.textContent = 'N/A';
-        });
+        const cacheKey = `repo-lang-${repo}`;
+        const cached = localStorage.getItem(cacheKey);
+
+        if (cached) {
+            const { language, timestamp } = JSON.parse(cached);
+            const oneHour = 60 * 60 * 1000;
+            if (Date.now() - timestamp < oneHour) {
+                langEl.textContent = language;
+                return;
+            }
+        }
+
+        fetch(`https://api.github.com/repos/${repo}`)
+            .then(res => {
+                if (!res.ok) throw new Error('GitHub API error: ' + res.status);
+                return res.json();
+            })
+            .then(data => {
+                langEl.textContent = data.language || 'N/A';
+                langEl.textContent = language;
+                localStorage.setItem(cacheKey, JSON.stringify({ language, timestamp: Date.now() }));
+            })
+            .catch(err => {
+                console.error('Failed to load repo info for', repo, err);
+                langEl.textContent = 'N/A';
+            });
     });
 
     function type() {
@@ -97,8 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Start Typing effect 
-    setTimeout(type, 1000);
-
-    // Smooth scrolling for anchor links 
+    setTimeout(type, 1000); 
 
 });
