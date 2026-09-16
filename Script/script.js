@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return res.json();
             })
             .then(data => {
-                langEl.textContent = data.language || 'N/A';
+                const language = data.language || 'N/A';
                 langEl.textContent = language;
                 localStorage.setItem(cacheKey, JSON.stringify({ language, timestamp: Date.now() }));
             })
