@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Text typing effects 
     const texts = [
-        "Full-Stack Developer",
-        "Backend Developer",
+        "Junior Full-Stack Developer",
+        "Junior Backend Developer",
         "IoT & Embedded Systems Enthusiast",
         "Computer Science Student",
     ]
