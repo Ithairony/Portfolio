@@ -5,6 +5,10 @@
     font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: linear-gradient(135deg , #0c0f17 0%, #151925 100%);
     color: white;
